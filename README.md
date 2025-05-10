@@ -60,13 +60,13 @@ Bogusław Witek
 
 ---
 
-<p align="center">
-    Coded with
-    <a href="https://www.windsurf.io" style="vertical-align: middle; display: inline-block;">
+<div align="center" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <span>Coded with</span>
+    <a href="https://www.windsurf.io">
         <picture>
             <source media="(prefers-color-scheme: dark)" srcset="https://exafunction.github.io/public/brand/windsurf-black-wordmark.svg">
             <source media="(prefers-color-scheme: light)" srcset="https://exafunction.github.io/public/brand/windsurf-white-wordmark.svg">
-            <img alt="Windsurf" src="https://exafunction.github.io/public/brand/windsurf-white-wordmark.svg" width="200" style="vertical-align: middle; margin-left: 4px;">
+            <img alt="Windsurf" src="https://exafunction.github.io/public/brand/windsurf-white-wordmark.svg" width="200" style="vertical-align: middle;">
         </picture>
     </a>
-</p>
+</div>
