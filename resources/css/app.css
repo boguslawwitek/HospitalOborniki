@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import 'tailwindcss';
+
+@plugin 'tailwindcss-animate';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant contrast (&:is(.contrast *));
+@custom-variant dark (&:is(.dark *));
+
+/* Font size variants */
+.text-normal {
+    font-size: 1rem;
+}
+
+.text-large {
+    font-size: 1.125rem;
+}
+
+.text-larger {
+    font-size: 1.25rem;
+}
+
+@theme {
+    --font-sans:
+        'Open Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-header-background: var(--header-background);
+    --color-header-text: var(--header-text);
+    --color-page-card: var(--page-card);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+:root {
+    --background: oklch(0.9897 0 0);
+    --foreground: oklch(0.22 0.04 265);
+    --header-background: oklch(0.22 0.04 265);
+    --header-text: oklch(1 0 0);
+    --page-card: oklch(0.94 0.004 264);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.22 0.04 265);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.22 0.04 265);
+    --primary: oklch(0.67 0.22 265);
+    --primary-foreground: oklch(1 0 0);
+    --secondary: oklch(0.82 0.13 265);
+    --secondary-foreground: oklch(0.22 0.04 265);
+    --muted: oklch(0.92 0.06 265);
+    --muted-foreground: oklch(0.4 0.04 265);
+    --accent: oklch(0.74 0.17 265);
+    --accent-foreground: oklch(0.22 0.04 265);
+    --destructive: oklch(0.65 0.22 25);
+    --destructive-foreground: oklch(1 0 0);
+    --border: oklch(0.82 0.13 265);
+    --input: oklch(0.82 0.13 265);
+    --ring: oklch(0.67 0.22 265);
+    --chart-1: oklch(0.67 0.22 265);
+    --chart-2: oklch(0.82 0.13 265);
+    --chart-3: oklch(0.92 0.06 265);
+    --chart-4: oklch(0.74 0.17 265);
+    --chart-5: oklch(0.4 0.04 265);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.82 0.13 265);
+    --sidebar-foreground: oklch(0.22 0.04 265);
+    --sidebar-primary: oklch(0.67 0.22 265);
+    --sidebar-primary-foreground: oklch(1 0 0);
+    --sidebar-accent: oklch(0.74 0.17 265);
+    --sidebar-accent-foreground: oklch(0.22 0.04 265);
+    --sidebar-border: oklch(0.82 0.13 265);
+    --sidebar-ring: oklch(0.67 0.22 265);
+}
+
+.dark {
+    --background: oklch(0.24 0.04 265);
+    --foreground: oklch(0.98 0.04 265);
+    --header-background: oklch(0.98 0 0);
+    --header-text: oklch(0 0 0);
+    --page-card: oklch(0.18 0.02 264);
+    --card: oklch(0.28 0.04 265);
+    --card-foreground: oklch(0.98 0.04 265);
+    --popover: oklch(0.28 0.04 265);
+    --popover-foreground: oklch(0.98 0.04 265);
+    --primary: oklch(0.98 0 0);
+    --primary-foreground: oklch(0.18 0.02 260);
+    --secondary: oklch(0.4 0.04 265);
+    --secondary-foreground: oklch(0.98 0.04 265);
+    --muted: oklch(0.28 0.04 265);
+    --muted-foreground: oklch(0.82 0.13 265);
+    --accent: oklch(0.67 0.22 265);
+    --accent-foreground: oklch(0.98 0.04 265);
+    --destructive: oklch(0.65 0.22 25);
+    --destructive-foreground: oklch(1 0 0);
+    --border: oklch(0.4 0.04 265);
+    --input: oklch(0.4 0.04 265);
+    --ring: oklch(0.67 0.22 265);
+    --chart-1: oklch(0.74 0.17 265);
+    --chart-2: oklch(0.4 0.04 265);
+    --chart-3: oklch(0.28 0.04 265);
+    --chart-4: oklch(0.67 0.22 265);
+    --chart-5: oklch(0.98 0.04 265);
+    --sidebar: oklch(0.28 0.04 265);
+    --sidebar-foreground: oklch(0.98 0.04 265);
+    --sidebar-primary: oklch(0.74 0.17 265);
+    --sidebar-primary-foreground: oklch(0.22 0.04 265);
+    --sidebar-accent: oklch(0.67 0.22 265);
+    --sidebar-accent-foreground: oklch(0.98 0.04 265);
+    --sidebar-border: oklch(0.4 0.04 265);
+    --sidebar-ring: oklch(0.67 0.22 265);
+}
+
+.contrast {
+    --background: oklch(0 0 0);              
+    --foreground: oklch(0.97 0.16 110);
+    --header-background: oklch(0 0 0);
+    --header-text: oklch(0.97 0.16 110);
+    --page-card: oklch(0 0 0);
+    --card: oklch(0 0 0);                   
+    --card-foreground: oklch(0.97 0.16 110);
+    --popover: oklch(0 0 0);
+    --popover-foreground: oklch(0.97 0.16 110);
+    --primary: oklch(0.97 0.16 110);       
+    --primary-foreground: oklch(0 0 0);       
+    --secondary: oklch(0.5 0.12 110);         
+    --secondary-foreground: oklch(0 0 0);
+    --muted: oklch(0.15 0 0);              
+    --muted-foreground: oklch(0.97 0.16 110);
+    --accent: oklch(0.97 0.16 110);        
+    --accent-foreground: oklch(0 0 0);
+    --destructive: oklch(0.65 0.18 27);
+    --destructive-foreground: oklch(0 0 0);
+    --border: oklch(0.97 0.16 110);  
+    --input: oklch(0.97 0.16 110);
+    --ring: oklch(0.97 0.16 110);
+    --chart-1: oklch(0.97 0.16 110);   
+    --chart-2: oklch(0.97 0.16 110);
+    --chart-3: oklch(0.97 0.16 110);
+    --chart-4: oklch(0.97 0.16 110);
+    --chart-5: oklch(0.97 0.16 110);
+    --radius: 0.625rem;
+    --sidebar: oklch(0 0 0);    
+    --sidebar-foreground: oklch(0.97 0.16 110);
+    --sidebar-primary: oklch(0.97 0.16 110);
+    --sidebar-primary-foreground: oklch(0 0 0);
+    --sidebar-accent: oklch(0.97 0.16 110);
+    --sidebar-accent-foreground: oklch(0 0 0);
+    --sidebar-border: oklch(0.97 0.16 110);
+    --sidebar-ring: oklch(0.97 0.16 110);
+}
+
+.content h2 {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.content h3 {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.content ul {
+    list-style-type: disc;
+    padding-left: 1rem;
+    margin-left: 1rem;
+}
+
+.content ol {
+    list-style-type: decimal;
+    padding-left: 1rem;
+    margin-left: 1rem;
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    width: 80%;
+}
+
+.content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
