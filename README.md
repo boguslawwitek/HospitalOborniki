@@ -61,7 +61,5 @@ Bogusław Witek
 ---
 
 <p align="center">
-    <a href="https://www.windsurf.io">
-        <img src="https://img.shields.io/badge/Coded_with-Windsurf-black?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMkwxIDEyaDR2OWgxNHYtOWg0TDEyIDJ6IiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg==" alt="Coded with Windsurf">
-    </a>
+    <i>Developed with AI</i>
 </p>
